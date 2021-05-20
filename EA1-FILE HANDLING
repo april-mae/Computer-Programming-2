@@ -1,0 +1,61 @@
+#include <stdio.h>
+int main()
+{
+   char name[50], name1 [50];
+   int i, e, eng, math, sci, avg, tot, eng1, math1, sci1, avg1, tot1;
+
+   FILE *fptr,*fptr1;
+   fptr = (fopen("C:\tudent.txt", "a"));
+   fptr1 = (fopen("C:\student1.txt", "a"));
+   if(fptr,fptr1 == NULL)
+   {
+       printf("Error!");
+       return(1);
+   }
+   
+    {
+	 
+	  printf("\Name: ");
+      scanf("%s", name);
+   
+      printf("Math: ");
+      scanf("%d", &math);
+      printf("Sci: ");
+      scanf("%d", &sci);
+      printf("Eng: ");
+      scanf("%d", &eng);
+      
+      tot = eng+math+sci;
+      avg = tot/3;
+  
+      printf("\Name: ");
+      scanf("%s", name1);
+
+      printf("Math: ");
+      scanf("%d", &math1);
+      printf("Sci: ");
+      scanf("%d", &sci1);
+      printf("Eng: ");
+      scanf("%d", &eng1);
+ 
+      tot1 = eng1+math1+sci1;
+      avg1 = tot1/3;
+
+      fprintf(fptr,"\Name: %s \", name);
+      fprintf(fptr,"Eng: %i \", eng);
+      fprintf(fptr,"Math: %i \", math);
+      fprintf(fptr,"Sci: %i \", sci);
+      fprintf(fptr,"\\Total Grade  %i \", tot);
+      fprintf(fptr,"Total Average  %i \", avg);
+      
+	  fprintf(fptr1,"\Name: %s \", name1);
+      fprintf(fptr1,"Eng: %i \", eng1);
+      fprintf(fptr1,"Math: %i \", math1);
+      fprintf(fptr1,"Sci: %i \", sci1);
+      fprintf(fptr1,"\\Total Grade  %i \", tot1);
+      fprintf(fptr1,"Total Average  %i \", avg1);
+   }
+
+   fclose(fptr);
+   return 0;
+}
